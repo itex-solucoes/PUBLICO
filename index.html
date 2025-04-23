@@ -1,61 +1,33 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Itex - Atendimento Online</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 50px;
-      background-color: #f2f2f2;
-    }
-    h1 {
-      color: #333;
-    }
-    button {
-      margin: 15px;
-      padding: 15px 30px;
-      font-size: 16px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .chat-btn {
-      background-color: #007bff;
-      color: #fff;
-    }
-    .site-btn {
-      background-color: #28a745;
-      color: #fff;
-    }
-    button:hover {
-      opacity: 0.9;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Bem-vindo à Itex Soluções</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f4f4f4;
+        }
+        button {
+            padding: 15px 30px;
+            margin: 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            background-color: #007acc;
+            color: white;
+        }
+        button:hover {
+            background-color: #005a99;
+        }
+    </style>
 </head>
 <body>
-
-  <h1>Bem-vindo à Itex</h1>
-
-  <button class="chat-btn" onclick="openChat()">Chamar Atendimento</button>
-  <button class="site-btn" onclick="window.open('https://itex.movidesk.com/', '_blank')">Ir para Portal de Atendimento</button>
-
-  <!-- Chat Movidesk -->
-  <script type="text/javascript">var mdChatClient="F2F357EAFF2A468BA1DF62F76E4DE299";</script>
-  <script src="https://chat.movidesk.com/Scripts/chat-widget.min.js"></script>
-  <!-- Chat Movidesk fim -->
-
-  <script>
-    function openChat() {
-      // Função padrão do Movidesk Chat Widget
-      if (typeof MDChat !== 'undefined') {
-        MDChat.open();
-      } else {
-        alert("Chat não carregado ainda. Aguarde um momento.");
-      }
-    }
-  </script>
-
+    <h1>Bem-vindo à Itex Soluções</h1>
+    <button onclick="window.location.href='chat.html'">Acessar Chat</button>
+    <button onclick="window.open('https://itex.movidesk.com/', '_blank')">Suporte Movidesk</button>
 </body>
 </html>
