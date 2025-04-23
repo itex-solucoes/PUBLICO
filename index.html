@@ -31,14 +31,6 @@
             text-align: center;
         }
 
-        chat-container {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            max-width: 480px; /* Largura máxima para dispositivos móveis */
-            margin: 0 auto;
-            z-index: 1000; /* Garante que o chat fique acima de outros elementos */
-        }
         h1 {
             font-size: 2.2em;
             color: #1e3a8a; /* Azul escuro */
@@ -73,13 +65,6 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
-        .chat-button {
-            background-color: #1e88e5; /* Azul vibrante */
-        }
-        .chat-button:hover {
-            background-color: #1565c0; /* Azul mais escuro */
-        }
-
         .support-button {
             background-color: #2ecc71; /* Verde moderno */
         }
@@ -95,8 +80,18 @@
             background-color: #d4ac0d; /* Amarelo escuro */
         }
 
+        /* Estilo do chat */
+        #chat-container {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            max-width: 480px;
+            height: 60%; /* Ajustar altura para melhor visualização */
+            margin: 0 auto;
+            z-index: 1000; /* Garante que o chat fique acima de outros elementos */
+            overflow: hidden;
+        }
 
-        /* Responsividade */
         @media (max-width: 480px) {
             .container {
                 padding: 20px;
@@ -107,6 +102,9 @@
             button {
                 font-size: 1em;
                 padding: 12px;
+            }
+            #chat-container {
+                height: 70%; /* Aumentar altura no celular */
             }
         }
     </style>
@@ -123,7 +121,7 @@
     </div>
 
     <!-- Contêiner responsivo para o chat -->
-    <div id="chat-container" style="position: fixed; bottom: 0; width: 100%; max-width: 480px; margin: 0 auto;">
+    <div id="chat-container">
         <script type="text/javascript">var mdChatClient="F71D393F0A4D4B5188FD833E67F8325A";</script>
         <script src="https://chat.movidesk.com/Scripts/chat-widget.min.js"></script>
     </div>
