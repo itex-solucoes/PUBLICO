@@ -14,8 +14,9 @@
 
         body {
             font-family: 'Roboto', sans-serif;
-            background: linear-gradient(135deg, #e3f2fd, #bbdefb); /* Gradiente suave */
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
@@ -29,11 +30,12 @@
             padding: 40px;
             max-width: 600px;
             text-align: center;
+            margin-bottom: 20px;
         }
 
         h1 {
             font-size: 2.2em;
-            color: #1e3a8a; /* Azul escuro */
+            color: #1e3a8a;
             margin-bottom: 20px;
         }
 
@@ -66,35 +68,61 @@
         }
 
         .support-button {
-            background-color: #2ecc71; /* Verde moderno */
+            background-color: #2ecc71;
         }
         .support-button:hover {
-            background-color: #27ae60; /* Verde escuro */
+            background-color: #27ae60;
         }
 
         .teamviewer-button {
-            background-color: #f1c40f; /* Amarelo vibrante */
-            color: #1a1a1a; /* Texto escuro para contraste */
+            background-color: #f1c40f;
+            color: #1a1a1a;
         }
         .teamviewer-button:hover {
-            background-color: #d4ac0d; /* Amarelo escuro */
+            background-color: #d4ac0d;
         }
 
         /* Estilo do chat */
         #chat-container {
-            position: fixed;
-            bottom: 0;
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
             width: 100%;
-            max-width: 480px;
-            height: 60%; /* Ajustar altura para melhor visualização */
+            height: 500px; /* Altura fixa inicial */
             margin: 0 auto;
-            z-index: 1000; /* Garante que o chat fique acima de outros elementos */
             overflow: hidden;
+            position: relative;
+            z-index: 1000;
         }
 
-        @media (max-width: 480px) {
-            .container {
+        /* Estilizar o iframe do Movidesk (se possível) */
+        #chat-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Botão para abrir/fechar o chat (opcional) */
+        .chat-toggle {
+            display: none; /* Mostrar apenas se implementar funcionalidade de toggle */
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #1e88e5;
+            color: #fff;
+            padding: 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1001;
+        }
+
+        /* Responsividade */
+        @media (max-width: 600px) {
+            .container, #chat-container {
                 padding: 20px;
+                max-width: 100%;
             }
             h1 {
                 font-size: 1.8em;
@@ -104,7 +132,13 @@
                 padding: 12px;
             }
             #chat-container {
-                height: 70%; /* Aumentar altura no celular */
+                height: 400px; /* Altura reduzida para dispositivos menores */
+            }
+        }
+
+        @media (max-height: 700px) {
+            #chat-container {
+                height: 70vh; /* Altura dinâmica para telas menores */
             }
         }
     </style>
