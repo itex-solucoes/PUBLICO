@@ -17,17 +17,35 @@
             cursor: pointer;
             border: none;
             border-radius: 8px;
-            background-color: #007acc;
-            color: white;
         }
-        button:hover {
-            background-color: #005a99;
+        .chat-button {
+            background-color: #007acc; /* Azul */
+            color: white; 
+        }
+        .chat-button:hover {
+            background-color: #005a99; /* Azul escuro */
+        }
+        .support-button {
+            background-color: #28a745; /* Verde */
+            color: white; 
+        }
+        .support-button:hover {
+            background-color: #218838; /* Verde escuro */
+        }
+        .teamviewer-button {
+            background-color: #ffcc00; /* Amarelo */
+            color: black; 
+        }
+        .teamviewer-button:hover {
+            background-color: #e6b800; /* Amarelo escuro */
         }
     </style>
 </head>
 <body>
     <h1>Bem-vindo à Itex Soluções</h1>
-    <button onclick="window.location.href='chat.html'">Acessar Chat</button>
-    <button onclick="window.open('https://itex.movidesk.com/', '_blank')">Suporte Movidesk</button>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABGElEQVR42mJkYGBg+M+AFeD///9/1xkYGJj+//+/cPz48Qe2trZ+//+/cPz48Qe2trZ+//+/cPz48Qe2trZ+//+/cPz48Qe2trZ+//+/cPz48Qe2trZ+//+/cPz48Qe2trZ+//+/cPz48Qe2trZy5cvH3Tt3j1WrVqFbt26Ffv36FbNmzaFfv36FbNmzaFfv36FbNmzaFfv36FbNmzaFfv36FbNmzaH79u0b27dvH7t27dKFCxcYMGBA27dvH7t27dKFCxcYMGBA27dvH7t27dKFCxcYMGBA27dvH7t27dKFCxcYMGBA27dvH7t27dKFCxcYMGBA29evXr1///6lWbNmyVbt26lW" alt="Logo da Itex Soluções">
+    <button class="chat-button" onclick="window.location.href='chat.html'">Acessar Chat</button>
+    <button class="support-button" onclick="window.open('https://itex.movidesk.com/', '_blank')">Suporte Movidesk</button>
+    <button class="teamviewer-button" onclick="window.open('https://get.teamviewer.com/67m5eurtem', '_blank')">Suporte TeamViewer</button>
 </body>
 </html>
