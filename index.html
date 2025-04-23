@@ -1,154 +1,120 @@
-<!DOCTYPE html>  
-<html lang="pt-BR">  
-<head>  
-    <meta charset="UTF-8">  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>Bem-vindo à Itex Soluções!</title>  
-    <style>  
-        /* Reset básico e configurações globais */  
-        * {  
-            margin: 0;  
-            padding: 0;  
-            box-sizing: border-box;  
-        }  
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem-vindo à Itex Soluções!</title>
+    <style>
+        /* Reset básico e configurações globais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-        body {  
-            font-family: 'Roboto', sans-serif;  
-            background: linear-gradient(135deg, #e3f2fd, #bbdefb);  
-            display: flex;  
-            flex-direction: column; /* Permitir o empilhamento */  
-            justify-content: center;  
-            align-items: center;  
-            min-height: 100vh;  
-            padding: 20px;  
-        }  
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb); /* Gradiente suave */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
 
-        .container {  
-            background-color: #ffffff;  
-            border-radius: 15px;  
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);  
-            padding: 40px;  
-            max-width: 600px;  
-            text-align: center;  
-            margin-bottom: 20px; /* Espaço inferior para o chat */  
-        }  
+        .container {
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            max-width: 600px;
+            text-align: center;
+        }
 
-        h1 {  
-            font-size: 2.2em;  
-            color: #1e3a8a;  
-            margin-bottom: 20px;  
-        }  
+        h1 {
+            font-size: 2.2em;
+            color: #1e3a8a; /* Azul escuro */
+            margin-bottom: 20px;
+        }
 
-        img {  
-            max-width: 150px;  
-            margin-bottom: 30px;  
-        }  
+        img {
+            max-width: 150px;
+            margin-bottom: 30px;
+        }
 
-        .button-group {  
-            display: flex;  
-            flex-direction: column;  
-            gap: 15px;  
-        }  
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
 
-        button {  
-            padding: 15px;  
-            font-size: 1.1em;  
-            font-weight: 500;  
-            border: none;  
-            border-radius: 10px;  
-            cursor: pointer;  
-            transition: transform 0.2s, box-shadow 0.2s;  
-            color: #fff;  
-            width: 100%;  
-        }  
+        button {
+            padding: 15px;
+            font-size: 1.1em;
+            font-weight: 500;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            color: #fff;
+            width: 100%;
+        }
 
-        button:hover {  
-            transform: translateY(-3px);  
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);  
-        }  
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
 
-        .support-button {  
-            background-color: #2ecc71;  
-        }  
-        .support-button:hover {  
-            background-color: #27ae60;  
-        }  
+        .chat-button {
+            background-color: #1e88e5; /* Azul vibrante */
+        }
+        .chat-button:hover {
+            background-color: #1565c0; /* Azul mais escuro */
+        }
 
-        .teamviewer-button {  
-            background-color: #f1c40f;  
-            color: #1a1a1a;  
-        }  
-        .teamviewer-button:hover {  
-            background-color: #d4ac0d;  
-        }  
+        .support-button {
+            background-color: #2ecc71; /* Verde moderno */
+        }
+        .support-button:hover {
+            background-color: #27ae60; /* Verde escuro */
+        }
 
-        /* Estilo do chat */  
-        #chat-container {  
-            width: 100%;  
-            max-width: 480px;  
-            height: 60%; /* Ajustar altura para melhor visualização */  
-            margin: 0 auto;  
-            overflow: hidden;  
-            display: none; /* Ocultar inicialmente */  
-            position: relative;  
-            z-index: 1000; /* Garante que o chat fique acima de outros elementos */  
-        }  
+        .teamviewer-button {
+            background-color: #f1c40f; /* Amarelo vibrante */
+            color: #1a1a1a; /* Texto escuro para contraste */
+        }
+        .teamviewer-button:hover {
+            background-color: #d4ac0d; /* Amarelo escuro */
+        }
 
-        .toggle-chat {  
-            cursor: pointer;  
-            padding: 10px;  
-            background-color: #3498db; /* Cor do botão de chat */  
-            border: none;  
-            border-radius: 10px;  
-            color: white;  
-            font-size: 1em;  
-            transition: background-color 0.3s;  
-        }  
+        /* Responsividade */
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 1.8em;
+            }
+            button {
+                font-size: 1em;
+                padding: 12px;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Bem-vindo à Itex Soluções</h1>
+        <img src="logo-itex.jpg" alt="Logo da Itex Soluções">
+        <div class="button-group">
+            <button class="support-button" onclick="window.open('https://itex.movidesk.com/', '_blank')">Suporte Movidesk</button>
+            <button class="teamviewer-button" onclick="window.open('https://get.teamviewer.com/67m5eurtem', '_blank')">Suporte TeamViewer</button>
+        </div>
+    </div>
 
-        .toggle-chat:hover {  
-            background-color: #2980b9;  
-        }  
-
-        @media (max-width: 480px) {  
-            .container {  
-                padding: 20px;  
-            }  
-            h1 {  
-                font-size: 1.8em;  
-            }  
-            button {  
-                font-size: 1em;  
-                padding: 12px;  
-            }  
-            #chat-container {  
-                height: 70%;  
-            }  
-        }  
-    </style>  
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">  
-</head>  
-<body>  
-    <div class="container">  
-        <h1>Bem-vindo à Itex Soluções</h1>  
-        <img src="logo-itex.jpg" alt="Logo da Itex Soluções">  
-        <div class="button-group">  
-            <button class="support-button" onclick="window.open('https://itex.movidesk.com/', '_blank')">Suporte Movidesk</button>  
-            <button class="teamviewer-button" onclick="window.open('https://get.teamviewer.com/67m5eurtem', '_blank')">Suporte TeamViewer</button>  
-        </div>  
-        <button class="toggle-chat" onclick="toggleChat()">Abrir Chat</button> <!-- Botão para abrir/fechar o chat -->  
-    </div>  
-
-    <!-- Contêiner responsivo para o chat -->  
-    <div id="chat-container">  
-        <script type="text/javascript">var mdChatClient="F71D393F0A4D4B5188FD833E67F8325A";</script>  
-        <script src="https://chat.movidesk.com/Scripts/chat-widget.min.js"></script>  
-    </div>  
-
-    <script>  
-        function toggleChat() {  
-            const chatContainer = document.getElementById('chat-container');  
-            chatContainer.style.display = chatContainer.style.display === 'block' ? 'none' : 'block';  
-        }  
-    </script>  
-</body>  
+    <!-- Script do chat Movidesk -->
+    <script type="text/javascript">var mdChatClient="F71D393F0A4D4B5188FD833E67F8325A";</script>
+    <script src="https://chat.movidesk.com/Scripts/chat-widget.min.js"></script>
+</body>
 </html>
