@@ -31,6 +31,14 @@
             text-align: center;
         }
 
+        chat-container {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            max-width: 480px; /* Largura máxima para dispositivos móveis */
+            margin: 0 auto;
+            z-index: 1000; /* Garante que o chat fique acima de outros elementos */
+        }
         h1 {
             font-size: 2.2em;
             color: #1e3a8a; /* Azul escuro */
@@ -87,6 +95,7 @@
             background-color: #d4ac0d; /* Amarelo escuro */
         }
 
+
         /* Responsividade */
         @media (max-width: 480px) {
             .container {
@@ -108,14 +117,15 @@
         <h1>Bem-vindo à Itex Soluções</h1>
         <img src="logo-itex.jpg" alt="Logo da Itex Soluções">
         <div class="button-group">
-            <button class="chat-button" onclick="window.location.href='chat.html'">Acessar Chat</button>
             <button class="support-button" onclick="window.open('https://itex.movidesk.com/', '_blank')">Suporte Movidesk</button>
             <button class="teamviewer-button" onclick="window.open('https://get.teamviewer.com/67m5eurtem', '_blank')">Suporte TeamViewer</button>
         </div>
     </div>
 
-    <!-- Script do chat Movidesk -->
-    <script type="text/javascript">var mdChatClient="F71D393F0A4D4B5188FD833E67F8325A";</script>
-    <script src="https://chat.movidesk.com/Scripts/chat-widget.min.js"></script>
+    <!-- Contêiner responsivo para o chat -->
+    <div id="chat-container" style="position: fixed; bottom: 0; width: 100%; max-width: 480px; margin: 0 auto;">
+        <script type="text/javascript">var mdChatClient="F71D393F0A4D4B5188FD833E67F8325A";</script>
+        <script src="https://chat.movidesk.com/Scripts/chat-widget.min.js"></script>
+    </div>
 </body>
 </html>
